@@ -654,7 +654,7 @@ hashes for each `@context` file, and 3) deemed that the contents of each
       </p>
 
       <p>
-When a document is processed by a processor that does not utilize JSON-LD
+When a document is processed by a processor that does not use JSON-LD
 libraries, and there is a requirement to use the same semantics as those used in
 a JSON-LD environment, implementers are advised to 1) enforce the expected order
 and values in the `@context` property, and 2) ensure that each `@context` file
@@ -665,7 +665,7 @@ matches the known cryptographic hashes for each `@context` file.
 Using static, versioned, `@context` files with published cryptographic hashes in
 conjunction with JSON Schema is one acceptable approach to implementing the
 mechanisms described above, which ensures proper term identification, typing,
-and order, when a processor that does not utilize a JSON-LD library is used.
+and order, when a processor that does not use a JSON-LD library is used.
 See the section on
 <a data-cite="?VC-DATA-MODEL-2.0#type-specific-credential-processing">
 Type-Specific Processing</a> in [[[?VC-DATA-MODEL-2.0]]] for more details.
@@ -1747,7 +1747,7 @@ through the reuse of design primitives and source code.
         </p>
 
         <p>
-When specifing a [=cryptographic suite=] that utilizes this design pattern, the
+When specifing a [=cryptographic suite=] that uses this design pattern, the
 `proof` value takes the following form:
         </p>
 
@@ -2604,7 +2604,7 @@ cryptographic protection on the payload. For example, digitally signing a single
 piece of information using RSA, ECDSA, and Falcon algorithms in parallel would
 provide a mechanism that could survive the failure of two of these three digital
 signature algorithms. When a particular cryptographic protection is compromised,
-such as an RSA digital signature using 768-bit keys, systems can still utilize
+such as an RSA digital signature using 768-bit keys, systems can still use
 the non-compromised cryptographic protections to continue to protect the
 information. Developers are urged to take advantage of this feature for all
 signed content that might need to be protected for a year or longer.
@@ -2661,7 +2661,7 @@ the burden on application developers and to enhance the security of the system.
 At times, it is beneficial to transform the data being protected during the
 cryptographic protection process. Such "in-line" transformation can enable a
 particular type of cryptographic protection to be agnostic to the data format it
-is carried in. For example, some Data Integrity cryptographic suites utilize RDF
+is carried in. For example, some Data Integrity cryptographic suites use RDF
 Dataset Canonicalization [[?RDF-CANON]] which transforms the initial
 representation into a canonical form [[?N-QUADS]] that is then serialized,
 hashed, and digitally signed. As long as any syntax expressing the protected
@@ -2684,7 +2684,7 @@ help prevent otherwise undetectable database drift over time.
         </p>
         <p>
 This specification is designed to avoid requiring the duplication of signed
-information by utilizing "in-line" data transformations. Application developers are urged
+information by using "in-line" data transformations. Application developers are urged
 to work with cryptographically protected data in the native data format for
 their application and not separate storage of cryptographic proofs from the data
 being protected. Developers are also urged to regularly confirm that the
@@ -2771,7 +2771,7 @@ that:
 
         <ul>
           <li>
-benefits from utilizing existing industry-standard database features with no
+benefits from using existing industry-standard database features with no
 changes to the protected information,
           </li>
           <li>
@@ -2944,7 +2944,7 @@ equivalent ways as input, and expressing all output in a single way, called a
 "canonical form".
         </p>
         <p>
-The security of a resulting [=data integrity proof=] that utilizes
+The security of a resulting [=data integrity proof=] that uses
 canonicalization is highly dependent on the correctness of the algorithm. For
 example, if a canonicalization algorithm converts two inputs that have different
 meanings into the same output, then the author's intentions can be
@@ -3096,7 +3096,7 @@ If the author of a message wishes it to be selectively disclosable by its
 recipient, then they need to enable selective disclosure on the specific
 message, and both need to use a capable cryptosuite. The author might also make
 it mandatory to disclose certain parts of the message. A recipient that wants to
-selectively disclose partial content of the message needs to utilize software
+selectively disclose partial content of the message needs to use software
 that is able to perform the technique. An example of a cryptosuite that supports
 selective disclosure is `bbs-2023`.
         </p>
@@ -3189,7 +3189,7 @@ RDF Dataset Canonicalization [[RDF-CANON]], from a privacy perspective.
         </p>
         <p>
 If an application does not require performing a selective disclosure of
-information in a secured document, nor does it utilize JSON-LD, then JSON
+information in a secured document, nor does it use JSON-LD, then JSON
 Canonicalization Scheme [[RFC8785]] is an attractive approach.
         </p>
         <p>
